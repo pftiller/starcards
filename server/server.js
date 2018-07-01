@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const router = require('./routes/star-wars.router');
+var mongo = require("mongodb");
 
 const port = process.env.PORT || 5000;
 /** -------- MONGOOSE CONNECTION --------**/

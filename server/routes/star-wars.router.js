@@ -3,11 +3,11 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const favoriteSchema = require('../modules/favorite.schema');
 
-let favorite = mongoose.model('Favorite', favoriteSchema);
+let Favorite = mongoose.model('Favorite', favoriteSchema);
 
 // GET 
 router.get('/', (req, res) => {
-    favorite.find({}, (error, storedFavorite) => {
+    Favorite.find({}, (error, storedFavorite) => {
         if (error) {
             console.log('error: ', error);
             res.sendStatus(500);
@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
 // POST
 router.post('/', (req, res) => {
     console.log('new entry to be added: ', req.body);
-    let newFavorite = new favorite(req.body);
+    let newFavorite = new Favorite(req.body);
     newFavorite.save( (error, newStoredFavorite) => {
         if (error) {
             console.log('error: ', error);
@@ -37,7 +37,7 @@ router.post('/', (req, res) => {
 // DELETE
 router.delete('/:id', (req, res) => {
     let favoriteId = req.params.id;
-    favorite.findByIdAndRemove(
+    Favorite.findByIdAndRemove(
         {"_id": favoriteId},
         // function(error, removed) 
         (error, removedDocument) => {
