@@ -7,8 +7,7 @@ const port = process.env.PORT || 5000;
 /** -------- MONGOOSE CONNECTION --------**/
 var mongoose = require('mongoose');
 
-let databaseUrl = 'mongodb://localhost:27017/mean-star-wars';
-// process.env.MONGOLAB_URI || process.env.MONGOHQ_URL;
+let databaseUrl = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL;
 
 mongoose.connect(databaseUrl);
 
