@@ -4,10 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "restart": "pm2 startOrRestart server/modules/ecosystem.config.js",
-    "deploy": "pm2 deploy server/modules/ecosystem.config.js production",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server/server.js"
+    "start": "node --inspect server/server.js"
   },
   "repository": {
     "type": "git",
@@ -28,8 +26,5 @@
     "angular-route": "^1.6.8",
     "express": "^4.16.2",
     "mongoose": "^5.0.1"
-  },
-  "devDependencies": {
-    "pm2": "^2.10.4"
   }
 }
