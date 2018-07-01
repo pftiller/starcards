@@ -6,7 +6,8 @@ const port = 5418;
 /** -------- MONGOOSE CONNECTION --------**/
 var mongoose = require('mongoose');
 
-var databaseUrl = 'mongodb://localhost:27017/mean-star-wars';
+
+var databaseUrl = 'mongodb://localhost:27017/starcards';
 
 mongoose.connection.on('connected', function() {
   console.log('mongoose connected to : ', databaseUrl);
