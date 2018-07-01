@@ -7,12 +7,14 @@ const port = process.env.PORT || 5000;
 /** -------- MONGOOSE CONNECTION --------**/
 var mongoose = require('mongoose');
 
-// let databaseUrl = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL;
+let databaseUrl = 
 
-mongoose.connect(process.env.MONGODB_URI);
+// process.env.MONGOLAB_URI || process.env.MONGOHQ_URL;
+
+mongoose.connect(databaseURL);
 
 mongoose.connection.on('connected', function() {
-  console.log('mongoose connected to : ', process.env.MONGODB_URIs);
+  console.log('mongoose connected to : ', databaseUrl);
 });
 
 mongoose.connection.on('error', function(err) {

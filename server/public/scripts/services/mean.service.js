@@ -47,7 +47,6 @@ myApp.service('MeanService', ['$http', function($http){
      };
  
       self.getFavorites = function() {
-          
          $http.get('/router')
              .then(function (response) {
                 console.log('get success. this is repsonse:', response);
