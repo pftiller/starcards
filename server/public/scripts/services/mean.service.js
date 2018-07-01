@@ -47,15 +47,15 @@ myApp.service('MeanService', ['$http', function($http){
              });
      };
  
-     self.getFavorites = function() {
+      self.getFavorites = function() {
          $http.get('/router')
              .then(function (response) {
                 console.log('get success. this is repsonse:', response);
                  self.favorites.result = response.data;
              })
-             .catch(function (response) {
-                 console.log('get error. this is response:', response);
-             });
+             .catch((err) => {
+                alert('Error getting favorites', '', err);
+            })
      };
  
      self.deleteFavorite = function(id) {
