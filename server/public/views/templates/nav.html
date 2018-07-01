@@ -1,0 +1,6 @@
+<ul layout="column" layout-gt-xs="row">
+        <li ng-repeat="navlink in navlinks" flex>
+            
+           <a ng-href="{{navlink.link}}" ng-class="{'active': navlink.id == states.activeItem}" ng-click="states.activeItem=navlink.id" flex>{{navlink.title}}</a>
+        </li>   
+</ul>

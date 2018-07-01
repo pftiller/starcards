@@ -1,0 +1,94 @@
+<!-- Favorites -->
+<div class="card favorites" ng-repeat="favorite in vm.favorites.result">
+    <div class="content">
+        <h2>Favorite</h2>
+        <div class="attributes" ng-if="favorite.name">
+            <strong>
+                <p>Name:</p>
+            </strong>
+            <p>{{favorite.name}}</p>
+        </div>
+        <div class="attributes" ng-if="favorite.title">
+            <strong>
+                <p ng-show="!favorites.length">Film title:</p>
+            </strong>
+            <p>{{favorite.title}}</p>
+            <p ng-hide="favorites.length"></p>
+        </div>
+
+        <div class="attributes" ng-if="favorite.episode_id">
+            <strong>
+                <p>Episode &#x23:</p>
+            </strong>
+            <p>{{favorite.episode_id}}</p>
+        </div>
+        <div class="attributes" ng-if="favorite.director">
+            <strong>
+                <p>Director:</p>
+            </strong>
+            <p>{{favorite.director}}</p>
+        </div>
+        <div class="attributes" ng-if="favorite.birth_year">
+            <strong>
+                <p>Birth year:</p>
+            </strong>
+            <p>{{favorite.birth_year}}</p>
+        </div>
+        <div class="attributes" ng-if="favorite.gender">
+            <strong>
+                <p>Gender:</p>
+            </strong>
+            <p>{{favorite.gender}}</p>
+        </div>
+        <div class="attributes" ng-if="favorite.eye_color">
+            <strong>
+                <p>Eye color:</p>
+            </strong>
+            <p>{{favorite.eye_color}}</p>
+        </div>
+
+        <div class="attributes" ng-if="favorite.population">
+            <strong>
+                <p>Population:</p>
+            </strong>
+            <p>{{favorite.population | number:0}}</p>
+        </div>
+        <div class="attributes" ng-if="favorite.terrain">
+            <strong>
+                <p>Terrain:</p>
+            </strong>
+            <p>{{favorite.terrain}}</p>
+        </div>
+        <div class="attributes" ng-if="favorite.name">
+            <strong>
+                <p>Name of species:</p>
+            </strong>
+            <p>{{favorite.name}}</p>
+        </div>
+        <div class="attributes" ng-if="favorite.classification">
+            <strong>
+                <p>Classification:</p>
+            </strong>
+            <p>{{favorite.classification}}</p>
+        </div>
+        <div class="attributes" ng-if="favorite.language">
+            <strong>
+                <p>Language:</p>
+            </strong>
+            <p>{{favorite.language}}</p>
+        </div>
+        <div class="attributes" ng-if="favorite.model">
+            <strong>
+                <p>Model:</p>
+            </strong>
+            <p>{{favorite.model}}</p>
+        </div>
+        <div class="attributes" ng-if="favorite.manufacturer">
+            <strong>
+                <p>Manufacturer:</p>
+            </strong>
+            <p>{{favorite.manufacturer}}</p>
+        </div>
+        <button class="fa fa-times-circle" ng-click="vm.deleteFavorite(favorite._id)"></button>
+    </div>
+</div>

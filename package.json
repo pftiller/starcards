@@ -1,0 +1,35 @@
+{
+  "name": "weekend-challenge-5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "restart": "pm2 startOrRestart server/modules/ecosystem.config.js",
+    "deploy": "pm2 deploy server/modules/ecosystem.config.js production",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pftiller/weekend-challenge-5.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pftiller/weekend-challenge-5/issues"
+  },
+  "homepage": "https://github.com/pftiller/weekend-challenge-5#readme",
+  "dependencies": {
+    "angular": "^1.6.8",
+    "angular-animate": "^1.6.8",
+    "angular-aria": "^1.6.8",
+    "angular-material": "^1.1.6",
+    "angular-messages": "^1.6.8",
+    "angular-route": "^1.6.8",
+    "express": "^4.16.2",
+    "mongoose": "^5.0.1"
+  },
+  "devDependencies": {
+    "pm2": "^2.10.4"
+  }
+}

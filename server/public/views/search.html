@@ -1,0 +1,108 @@
+<div layout="row" layout-align="center center" layout-margin layout-padding>
+        <select ng-model="selectedType" ng-options="x for x in vm.types" flex="25" ng-change="vm.changeResults()">
+            <option value="" hidden>Select resource</option>
+        </select>
+        <input type="text" placeholder="Search term" ng-model="query" flex="30">
+        <button class="search" ng-click="vm.callSWAPI(selectedType, query)" flex="15">Search</button>
+    </div>
+    <div layout="row" layout-wrap>
+        <!-- Films -->
+        <div class="card film" ng-if="selectedType == 'Films'" ng-repeat="film in vm.swapi.result" data="{{film.url}}">
+            <div class="content">
+                <h2>Films</h2>
+                <div class="attributes"> <strong><p>Film title:</p></strong>
+                    <p>{{film.title}}</p>
+                </div>
+                <div class="attributes"> <strong><p>Episode #:</p></strong>
+                    <p>{{film.episode_id}}</p>
+                </div>
+                <div class="attributes"> <strong><p>Director:</p></strong>
+                    <p>{{film.director}}</p>
+                </div>
+                <button class="fa fa-star" ng-click="vm.addFavorite(film, $event)"></button>
+            </div>
+        </div>
+        <!-- People -->
+        <div class="card people" ng-if="selectedType == 'People'" ng-repeat="person in vm.swapi.result" data="{{person.url}}">
+            <div class="content">
+                <h2>People</h2>
+                <div class="attributes"> <strong><p>Name:</p></strong>
+                    <p>{{person.name}}</p>
+                </div>
+                <div class="attributes"> <strong><p>Birth year:</p></strong>
+                    <p>{{person.birth_year}}</p>
+                </div>
+                <div class="attributes"> <strong><p>Gender:</p></strong>
+                    <p>{{person.gender}}</p>
+                </div>
+                <div class="attributes"> <strong><p>Eye color:</p></strong>
+                    <p>{{person.eye_color}}</p>
+                </div>
+                <button class="fa fa-star" ng-click="vm.addFavorite(person, $event)"></button>
+            </div>
+        </div>
+        <!-- Planets -->
+        <div class="card planets" ng-if="selectedType == 'Planets'" ng-repeat="planet in vm.swapi.result" data="{{planet.url}}">
+            <div class="content">
+                <h2>Planets</h2>
+                <div class="attributes"> <strong><p>Planet name:</p></strong>
+                    <p>{{planet.name}}</p>
+                </div>
+                <div class="attributes"> <strong><p>Population:</p></strong>
+                    <p>{{planet.population | number:0}}</p>
+                </div>
+                <div class="attributes"> <strong><p>Terrain:</p></strong>
+                    <p>{{planet.terrain}}</p>
+                </div>
+                <button class="fa fa-star" ng-click="vm.addFavorite(planet, $event)"></button>
+            </div>
+        </div>
+        <!-- Species -->
+        <div class="card species" ng-if="selectedType == 'Species'" ng-repeat="species in vm.swapi.result" data="{{species.url}}">
+            <div class="content">
+                <h2>Species</h2>
+                <div class="attributes"> <strong><p>Name of species:</p></strong>
+                    <p>{{species.name}}</p>
+                </div>
+                <div class="attributes"> <strong><p>Classification:</p></strong>
+                    <p>{{species.classification}}</p>
+                </div>
+                <div class="attributes"> <strong><p>Language:</p></strong>
+                    <p>{{species.language}}</p>
+                </div>
+                <button class="fa fa-star" ng-click="vm.addFavorite(species, $event)"></button>
+            </div>
+        </div>
+        <!-- Starships -->
+        <div class="card starships" ng-if="selectedType == 'Starships'" ng-repeat="starship in vm.swapi.result" data="{{starship.url}}">
+            <div class="content">
+                <h2>Starships</h2>
+                <div class="attributes"> <strong><p>Name:</p></strong>
+                    <p>{{starship.name}}</p>
+                </div>
+                <div class="attributes"> <strong><p>Model:</p></strong>
+                    <p>{{starship.model}}</p>
+                </div>
+                <div class="attributes"> <strong><p>Manufacturer:</p></strong>
+                    <p>{{starship.manufacturer}}</p>
+                </div>
+                <button class="fa fa-star" ng-click="vm.addFavorite(starship, $event)"></button>
+            </div>
+        </div>
+        <!-- Vehicles -->
+        <div class="card vehicles" ng-if="selectedType == 'Vehicles'" ng-repeat="vehicle in vm.swapi.result" data="{{vehicle.url}}">
+            <div class="content">
+                <h2>Vehicles</h2>
+                <div class="attributes"> <strong><p>Name:</p></strong>
+                    <p>{{vehicle.name}}</p>
+                </div>
+                <div class="attributes"> <strong><p>Model:</p></strong>
+                    <p>{{vehicle.model}}</p>
+                </div>
+                <div class="attributes"> <strong><p>Manufacturer:</p></strong>
+                    <p>{{vehicle.manufacturer}}</p>
+                </div>
+                <button class="fa fa-star" ng-click="vm.addFavorite(vehicle, $event)"></button>
+            </div>
+        </div>
+    </div>
