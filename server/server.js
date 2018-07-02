@@ -2,13 +2,12 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const router = require('./routes/star-wars.router');
-var mongo = require("mongodb");
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT;
 /** -------- MONGOOSE CONNECTION --------**/
 var mongoose = require('mongoose');
 
-let databaseUrl = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/mean-star-wars'
+let databaseUrl = process.env.DATABASE_URI;
 
 
 
